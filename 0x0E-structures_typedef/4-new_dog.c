@@ -1,51 +1,83 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
 /**
- * new_dog - entry point
- * @name: size of triangle
- * @age: size of triangle
- * @owner: size of triangle
- * Description: By abdeljalil ouafi
- * Return: 0
+ * _strcpy - copies a string src to dest
+ * @dest: string to copy to
+ * @src: string to copy from
+ * Return: dest the string the has src content
  */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+/**
+ * _strlen - returns the length of a string
+ * @s: the pointer of the string
+ *
+ * Return: len
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+/**
+ * new_dog - creates a new dog struct
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
+ * Description : Made by Abdeljalil Ouafi
+ * Return: pointer to new dog struct, or NULL if malloc fails
+ */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
-	int i;
-	int ownerL = 0;
-	int nameL = 0;
+	int len1, len2;
 
-	while (name[nameL])
-		nameL++;
-	while (owner[ownerL])
-		ownerL++;
+	len1 = _strlen(name);
+	len2 = _strlen(owner);
+
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
-	dog->name = malloc(sizeof(char) * (nameL + 1));
+
+	dog->name = malloc(sizeof(char) * (len1 + 1));
 	if (dog->name == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
-	for (i = 0; name[i] != '\0'; i++)
-	{
-		dog->name[i] = name[i];
-	}
-	dog->name[i] = '\0';
-	dog->owner = malloc(sizeof(char) * (ownerL + 1));
+
+	dog->owner = malloc(sizeof(char) * (len2 + 1));
 	if (dog->owner == NULL)
 	{
-		free(dog->name);
 		free(dog);
+		free(dog->name);
 		return (NULL);
 	}
-	for (i = 0; owner[i] != '\0'; i++)
-	{
-		dog->owner[i] = owner[i];
-	}
-	dog->owner[i] = '\0';
+	_strcpy(dog->name, name);
+	_strcpy(dog->owner, owner);
 	dog->age = age;
+
 	return (dog);
 }
