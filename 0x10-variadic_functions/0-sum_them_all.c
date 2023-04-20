@@ -2,7 +2,7 @@
 
 /**
  * sum_them_all - returns the sum of all its parameters.
- * @n : parameters 
+ * @n : parameters
  * Describtion : Made by Abdeljalil Ouafi
  * Return: sum and if n equal zero return it
  *
