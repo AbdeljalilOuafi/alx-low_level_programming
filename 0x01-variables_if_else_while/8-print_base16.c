@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	char base16[17]= "0123456789abcdef";
+	char base16[17] = "0123456789abcdef";
 
 	int i;
 
