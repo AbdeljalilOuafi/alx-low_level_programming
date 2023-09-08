@@ -1,1 +1,1 @@
-Mastering C And Low level Porgramming
+Simple Compiling stuff, First interoduction to puts and printf
