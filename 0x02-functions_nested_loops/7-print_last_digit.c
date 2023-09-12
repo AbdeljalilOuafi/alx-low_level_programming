@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_last_digit(int num)
+int print_last_digit(int n)
 {
 int a;
 if (n < 0)
