@@ -1,3 +1,5 @@
+<div style="text-align: left;">
+
 # ALX SE Project: 0x04-more_functions_nested_loops
 
 This project is part of the ALX Software Engineering program and focuses on further developing your skills in C programming by working with functions and nested loops. It includes a series of tasks that involve implementing various functions and programs that utilize these concepts.
