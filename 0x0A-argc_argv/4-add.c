@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+int isinteger(char *ptr);
 /**
  * main - adds positive numbers
  * @argc: arguments count
