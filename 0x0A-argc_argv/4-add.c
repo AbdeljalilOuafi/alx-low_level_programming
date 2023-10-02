@@ -7,24 +7,11 @@
  * @argv: arguments
  * Return: Alwyas 0.
  */
-int isinteger(char *ptr)
-{
-	int i;
-
-	for (i = 0; ptr[i] != '\0'; i++)
-	{
-		if (ptr[i] < 48 || ptr[i] > 57)
-		{
-			return (1);
-		}
-	}
-	return (0);	
-}
 int main(int argc, char *argv[])
 {
 	int i;
 	int sum = 0;
-	
+
 	if (argc < 3)
 	{
 		printf("0\n");
@@ -45,5 +32,24 @@ int main(int argc, char *argv[])
 		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
+	return (0);
+}
+
+/**
+ * isinteger - checks argument if its an integer
+ * @ptr: pointer to argv
+ * Return: 1 if ptr is not an int, 0 Otherwise.
+ */
+int isinteger(char *ptr)
+{
+	int i;
+
+	for (i = 0; ptr[i] != '\0'; i++)
+	{
+		if (ptr[i] < 48 || ptr[i] > 57)
+		{
+			return (1);
+		}
+	}
 	return (0);
 }
